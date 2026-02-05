@@ -1,2 +1,16 @@
 # git bash command in windows
 -- run script Create3UbuntuServer # bash -x Crerate3ubuntuServers.sh
+
+# step 1
+export PATH="$PATH:/c/Program Files/Oracle/VirtualBox"
+
+# step 2
+chmod +x setup_vms.sh
+./setup_vms.sh
+
+VBoxManage startvm vm-lab-1 --type headless
+VBoxManage guestproperty get "vm-lab-1" /VirtualBox/GuestInfo/Net/0/V4/IP
+
+#step 3
+chmod +x setup_vms.sh
+./setup_vms.sh

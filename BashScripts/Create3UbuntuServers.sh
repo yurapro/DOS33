@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ISO_PATH="C:/Users/YuraP/source/repos/DevOps/ubuntu-24.04.3-live-server-amd64.iso"
+ISO_PATH="C:/Users/YuraP/source/files/ubuntu-24.04.3-live-server-amd64.iso"
 VM_DIR="$HOME/VirtualBox VMs"
 VM_USER="user"
 VM_PASS="password"
