@@ -13,7 +13,7 @@ if [ ! -f "$SSH_KEY_FILE" ]; then
     
     echo "SSH‑key created: $SSH_KEY_FILE"
 else
-    echo "SSH‑ключ уже существует: $SSH_KEY_FILE"
+    echo "SSH‑key is exists: $SSH_KEY_FILE"
 fi
 
 VM_PREFIX="vm-lab"
