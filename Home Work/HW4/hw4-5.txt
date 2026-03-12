@@ -1,0 +1,67 @@
+yuri@UbuntuHW:~$ sudo apt install ufw
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ufw is already the newest version (0.36.2-6).
+ufw set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 29 not upgraded.
+yuri@UbuntuHW:~$ sudo ufw allow 22/tcp
+Rules updated
+Rules updated (v6)
+yuri@UbuntuHW:~$ sudo ufw allow 80/tcp
+Rules updated
+Rules updated (v6)
+yuri@UbuntuHW:~$ sudo ufw enable
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+Firewall is active and enabled on system startup
+yuri@UbuntuHW:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+
+yuri@UbuntuHW:~$ sudo ufw default deny incoming
+Default incoming policy changed to 'deny'
+(be sure to update your rules accordingly)
+yuri@UbuntuHW:~$ sudo default allow outgoing
+sudo: default: command not found
+yuri@UbuntuHW:~$ sudo default allow outgoing
+sudo: default: command not found
+yuri@UbuntuHW:~$ sudo ufw default allow outgoing
+Default outgoing policy changed to 'allow'
+(be sure to update your rules accordingly)
+yuri@UbuntuHW:~$ ssh devuser@192.168.31.231
+The authenticity of host '192.168.31.231 (192.168.31.231)' can't be established.
+ED25519 key fingerprint is SHA256:kxIoLEw74D2ML7CE2yCHjE07XrRv8BlO9zXx0B7JQPA.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.31.231' (ED25519) to the list of known hosts.
+devuser@192.168.31.231's password:
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.17.0-14-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+18 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+devuser@UbuntuHW:~$

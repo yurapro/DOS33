@@ -1,0 +1,59 @@
+yuri@UbuntuHW:~$ sudo apt install nginx
+[sudo] password for yuri:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  nginx-common
+Suggested packages:
+  fcgiwrap nginx-doc
+The following NEW packages will be installed:
+  nginx nginx-common
+0 upgraded, 2 newly installed, 0 to remove and 29 not upgraded.
+Need to get 565 kB of archives.
+After this operation, 1,596 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common all 1.24.0-2ubuntu7.6 [43.5 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.6 [521 kB]
+Fetched 565 kB in 0s (3,968 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 186599 files and directories currently installed.)
+Preparing to unpack .../nginx-common_1.24.0-2ubuntu7.6_all.deb ...
+Unpacking nginx-common (1.24.0-2ubuntu7.6) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.24.0-2ubuntu7.6_amd64.deb ...
+Unpacking nginx (1.24.0-2ubuntu7.6) ...
+Setting up nginx-common (1.24.0-2ubuntu7.6) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
+Setting up nginx (1.24.0-2ubuntu7.6) ...
+ * Upgrading binary nginx                                                                                                  [ OK ]
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for ufw (0.36.2-6) ...
+yuri@UbuntuHW:~$ sudo apt install nginx
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+nginx is already the newest version (1.24.0-2ubuntu7.6).
+0 upgraded, 0 newly installed, 0 to remove and 29 not upgraded.
+yuri@UbuntuHW:~$ sudo systemctl start nginx
+yuri@UbuntuHW:~$ sudo systemctl enable nginx
+Synchronizing state of nginx.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable nginx
+yuri@UbuntuHW:~$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-03-11 15:04:27 UTC; 1min 22s ago
+       Docs: man:nginx(8)
+   Main PID: 9625 (nginx)
+      Tasks: 4 (limit: 4598)
+     Memory: 3.0M (peak: 6.7M)
+        CPU: 43ms
+     CGroup: /system.slice/nginx.service
+             ├─9625 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─9628 "nginx: worker process"
+             ├─9629 "nginx: worker process"
+             └─9630 "nginx: worker process"
+
+Mar 11 15:04:27 UbuntuHW systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Mar 11 15:04:27 UbuntuHW systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
